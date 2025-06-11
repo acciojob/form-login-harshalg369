@@ -1,16 +1,12 @@
 function getFormvalue(event) {
-  event.preventDefault(); // Prevent form from reloading the page
+  event.preventDefault(); // prevent form from refreshing the page
 
-  const firstName = document.querySelector('input[name="fname"]').value.trim();
-  const lastName = document.querySelector('input[name="lname"]').value.trim();
+  const fname = document.querySelector('[name="fname"]').value.trim();
+  const lname = document.querySelector('[name="lname"]').value.trim();
 
-  if (firstName === '' || lastName === '') {
-    alert("Please fill in both First Name and Last Name.");
-    return;
+  if (fname === "" && lname === "") {
+    alert("Please enter your name.");
+  } else {
+    alert(`${fname} ${lname}`.trim());
   }
-
-  const fullName = `${firstName} ${lastName}`;
-  alert(fullName);
 }
-
-document.getElementById("nameForm").addEventListener("submit", getFormvalue);
